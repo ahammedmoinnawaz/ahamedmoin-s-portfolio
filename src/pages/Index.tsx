@@ -4,13 +4,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Mail, Linkedin, Github, FileText, Award, Briefcase, Book, Database, BarChart3, TrendingUp, Users } from "lucide-react";
+import TopNavigation from "@/components/TopNavigation";
+import BottomNavigation from "@/components/BottomNavigation";
+import DataVisualizationBackground from "@/components/DataVisualizationBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <DataVisualizationBackground />
+      <TopNavigation />
       
       {/* Hero Section with Blue Gradient */}
-      <section className="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white relative overflow-hidden">
+      <section id="hero" className="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white relative overflow-hidden z-10">
         {/* Floating Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
@@ -61,7 +66,7 @@ const Index = () => {
       </section>
 
       {/* About Section with Stats */}
-      <section className="py-20">
+      <section id="about" className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -140,7 +145,7 @@ const Index = () => {
       </section>
 
       {/* Technical Skills Section */}
-      <section className="py-20 bg-muted/30">
+      <section id="skills" className="py-20 bg-muted/30 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold mb-12 text-center">Technical Skills</h3>
@@ -285,7 +290,7 @@ const Index = () => {
       </section>
 
       {/* Professional Experience */}
-      <section className="py-20">
+      <section id="experience" className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold mb-12 text-center">Professional Experience</h3>
@@ -374,7 +379,7 @@ const Index = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-muted/30">
+      <section id="projects" className="py-20 bg-muted/30 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold mb-12 text-center">Featured Projects</h3>
@@ -593,7 +598,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white">
+      <section id="contact" className="py-20 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-3xl font-bold mb-6">Get In Touch</h3>
@@ -629,6 +634,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <BottomNavigation />
     </div>
   );
 };
