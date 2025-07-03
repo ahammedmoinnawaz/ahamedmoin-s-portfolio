@@ -1,96 +1,136 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Linkedin, Github, FileText, Award, Briefcase, Book } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Mail, Linkedin, Github, FileText, Award, Briefcase, Book, Database, BarChart3, TrendingUp, Users } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-primary">Alex Thompson</h1>
-            <div className="flex gap-6">
-              <a href="#about" className="hover:text-primary transition-colors">About</a>
-              <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
-              <a href="#education" className="hover:text-primary transition-colors">Education</a>
-              <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
-              <a href="#blog" className="hover:text-primary transition-colors">Blog</a>
-              <a href="#freelance" className="hover:text-primary transition-colors">Freelance</a>
-              <a href="#certificates" className="hover:text-primary transition-colors">Certificates</a>
+      
+      {/* Hero Section with Blue Gradient */}
+      <section className="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white relative overflow-hidden">
+        {/* Floating Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-40 right-40 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 right-20 w-24 h-24 bg-white/10 rounded-full blur-lg"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 flex items-center justify-center min-h-screen relative z-10">
+          <div className="text-center max-w-4xl">
+            {/* Profile Image */}
+            <div className="mb-8">
+              <Avatar className="w-48 h-48 mx-auto border-4 border-white/30">
+                <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Data Analyst" />
+                <AvatarFallback className="text-6xl bg-white/20">AN</AvatarFallback>
+              </Avatar>
+            </div>
+            
+            {/* Name and Title */}
+            <h1 className="text-6xl font-bold mb-4">Ahammed Moin Nawaz</h1>
+            <h2 className="text-2xl font-light mb-8 opacity-90">Data Analyst & Business Intelligence Specialist</h2>
+            
+            {/* Description */}
+            <p className="text-lg leading-relaxed mb-12 max-w-3xl mx-auto opacity-90">
+              Passionate Data Analyst with proven expertise in Power BI, Excel Advanced Analytics, and Data Visualization. 
+              Experienced in transforming complex datasets into actionable business insights through internships and successful 
+              freelance projects. Skilled in data cleaning, statistical analysis, and creating compelling dashboards that drive 
+              strategic decision-making.
+            </p>
+            
+            {/* Action Buttons */}
+            <div className="flex justify-center gap-4 mb-16">
+              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-white/90">
+                Request Resume
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                View Projects
+              </Button>
             </div>
           </div>
         </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 to-accent/10">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl font-bold mb-6 text-foreground">Data Analyst & Insights Specialist</h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Transforming complex data into actionable insights through advanced analytics, 
-              visualization, and statistical modeling. Passionate about driving data-driven decisions.
-            </p>
-            <div className="flex justify-center gap-4">
-              <Button size="lg" className="gap-2">
-                <Mail className="h-4 w-4" />
-                Contact Me
-              </Button>
-              <Button variant="outline" size="lg" className="gap-2">
-                <FileText className="h-4 w-4" />
-                Download Resume
-              </Button>
-            </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-16">
+      {/* About Section with Stats */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-8 text-center">About Me</h3>
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* About Content */}
               <div>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  With over 5 years of experience in data analysis, I specialize in extracting meaningful 
-                  insights from complex datasets using Python, R, SQL, and advanced visualization tools.
-                </p>
+                <h3 className="text-3xl font-bold mb-6">About Me</h3>
+                <h4 className="text-xl font-semibold text-primary mb-4">Data-Driven Problem Solver</h4>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  My expertise spans across statistical analysis, machine learning, business intelligence, 
-                  and data storytelling, helping organizations make informed strategic decisions.
+                  Entry-level Data Analyst with hands-on experience in Power BI, Excel, and data visualization. 
+                  I specialize in cleaning, analyzing, and visualizing data to support critical business decisions. 
+                  With internship experience and successful freelance projects, I bring a unique blend of technical 
+                  skills and business acumen to every project.
                 </p>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  Based in Bellary, Karnataka, I'm passionate about transforming complex datasets into clear, 
+                  actionable insights. I thrive in collaborative environments and am seeking opportunities to 
+                  grow while delivering value to global teams, whether remote or in-office.
+                </p>
+                
+                {/* Contact Links */}
                 <div className="flex gap-4">
-                  <Button variant="outline" size="sm">
-                    <Linkedin className="h-4 w-4 mr-2" />
+                  <Button variant="outline" className="gap-2">
+                    <Linkedin className="h-4 w-4" />
                     LinkedIn
                   </Button>
-                  <Button variant="outline" size="sm">
-                    <Github className="h-4 w-4 mr-2" />
+                  <Button variant="outline" className="gap-2">
+                    <Github className="h-4 w-4" />
                     GitHub
                   </Button>
                 </div>
               </div>
-              <div className="bg-muted/50 p-8 rounded-lg">
-                <h4 className="font-semibold mb-4">Quick Stats</h4>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span>Projects Completed</span>
-                    <span className="font-semibold">50+</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Years Experience</span>
-                    <span className="font-semibold">5+</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Satisfied Clients</span>
-                    <span className="font-semibold">25+</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Certifications</span>
-                    <span className="font-semibold">8</span>
+              
+              {/* Stats Cards */}
+              <div>
+                <div className="grid grid-cols-2 gap-6">
+                  <Card className="text-center p-6">
+                    <div className="text-3xl font-bold text-primary mb-2">15+</div>
+                    <div className="text-sm text-muted-foreground">Projects Completed</div>
+                  </Card>
+                  <Card className="text-center p-6">
+                    <div className="text-3xl font-bold text-primary mb-2">8+</div>
+                    <div className="text-sm text-muted-foreground">Tools Mastered</div>
+                  </Card>
+                  <Card className="text-center p-6">
+                    <div className="text-3xl font-bold text-primary mb-2">100%</div>
+                    <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+                  </Card>
+                  <Card className="text-center p-6">
+                    <div className="text-3xl font-bold text-primary mb-2">4</div>
+                    <div className="text-sm text-muted-foreground">Languages</div>
+                  </Card>
+                </div>
+                
+                {/* Professional Image */}
+                <div className="mt-8">
+                  <img 
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                    alt="Professional Data Analyst Workspace" 
+                    className="w-full rounded-lg shadow-md"
+                  />
+                  <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div className="text-center">
+                      <div className="font-semibold text-primary">Power BI Expert</div>
+                      <div className="text-sm text-muted-foreground">Certified Professional</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="font-semibold text-primary">Excel Advanced</div>
+                      <div className="text-sm text-muted-foreground">VBA & Analytics</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -99,62 +139,143 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-16 bg-muted/30">
+      {/* Technical Skills Section */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold mb-12 text-center">Technical Skills</h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card>
+            
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Core Technical Skills */}
+              <Card className="p-6">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <FileText className="h-5 w-5 text-primary" />
-                    Programming Languages
-                  </CardTitle>
+                  <CardTitle>Core Technical Skills</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Python</Badge>
-                    <Badge variant="secondary">R</Badge>
-                    <Badge variant="secondary">SQL</Badge>
-                    <Badge variant="secondary">JavaScript</Badge>
-                    <Badge variant="secondary">MATLAB</Badge>
+                <CardContent className="space-y-6">
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="flex items-center gap-2">
+                        <Database className="h-4 w-4" />
+                        SQL
+                      </span>
+                      <span className="text-sm font-medium">85%</span>
+                    </div>
+                    <Progress value={85} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>🐍 Python</span>
+                      <span className="text-sm font-medium">78%</span>
+                    </div>
+                    <Progress value={78} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>📊 Excel Advanced</span>
+                      <span className="text-sm font-medium">92%</span>
+                    </div>
+                    <Progress value={92} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="flex items-center gap-2">
+                        <BarChart3 className="h-4 w-4" />
+                        Microsoft Power BI
+                      </span>
+                      <span className="text-sm font-medium">95%</span>
+                    </div>
+                    <Progress value={95} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>📋 Tableau</span>
+                      <span className="text-sm font-medium">82%</span>
+                    </div>
+                    <Progress value={82} className="h-2" />
                   </div>
                 </CardContent>
               </Card>
 
-              <Card>
+              {/* Data Analysis Skills */}
+              <Card className="p-6">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Award className="h-5 w-5 text-primary" />
-                    Data Tools & Platforms
-                  </CardTitle>
+                  <CardTitle>Data Analysis</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Tableau</Badge>
-                    <Badge variant="secondary">Power BI</Badge>
-                    <Badge variant="secondary">Excel</Badge>
-                    <Badge variant="secondary">Jupyter</Badge>
-                    <Badge variant="secondary">Apache Spark</Badge>
+                <CardContent className="space-y-6">
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>Data Cleaning</span>
+                      <span className="text-sm font-medium">90%</span>
+                    </div>
+                    <Progress value={90} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>Statistical Analysis</span>
+                      <span className="text-sm font-medium">85%</span>
+                    </div>
+                    <Progress value={85} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>Business Intelligence</span>
+                      <span className="text-sm font-medium">88%</span>
+                    </div>
+                    <Progress value={88} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>KPI Development</span>
+                      <span className="text-sm font-medium">87%</span>
+                    </div>
+                    <Progress value={87} className="h-2" />
                   </div>
                 </CardContent>
               </Card>
 
-              <Card>
+              {/* Visualization Skills */}
+              <Card className="p-6">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Briefcase className="h-5 w-5 text-primary" />
-                    Machine Learning
-                  </CardTitle>
+                  <CardTitle>Visualization</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Scikit-learn</Badge>
-                    <Badge variant="secondary">TensorFlow</Badge>
-                    <Badge variant="secondary">Pandas</Badge>
-                    <Badge variant="secondary">NumPy</Badge>
-                    <Badge variant="secondary">Seaborn</Badge>
+                <CardContent className="space-y-6">
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>Dashboard Design</span>
+                      <span className="text-sm font-medium">93%</span>
+                    </div>
+                    <Progress value={93} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>Interactive Reports</span>
+                      <span className="text-sm font-medium">89%</span>
+                    </div>
+                    <Progress value={89} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>Data Storytelling</span>
+                      <span className="text-sm font-medium">86%</span>
+                    </div>
+                    <Progress value={86} className="h-2" />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span>Chart Optimization</span>
+                      <span className="text-sm font-medium">91%</span>
+                    </div>
+                    <Progress value={91} className="h-2" />
                   </div>
                 </CardContent>
               </Card>
@@ -163,30 +284,36 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section id="education" className="py-16">
+      {/* Professional Experience */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-12 text-center">Education</h3>
-            <div className="space-y-6">
+            <h3 className="text-3xl font-bold mb-12 text-center">Professional Experience</h3>
+            
+            <div className="space-y-8">
               <Card>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle className="flex items-center gap-2">
-                        <Book className="h-5 w-5 text-primary" />
-                        Master of Science in Data Science
+                        <Briefcase className="h-5 w-5 text-primary" />
+                        Data Analytics Intern
                       </CardTitle>
-                      <CardDescription>Stanford University</CardDescription>
+                      <CardDescription>TechNest Intern (Remote)</CardDescription>
                     </div>
-                    <Badge>2019-2021</Badge>
+                    <Badge>May - June 2025</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    Specialized in statistical modeling, machine learning algorithms, and big data analytics. 
-                    Thesis: "Predictive Analytics in Healthcare Using Deep Learning"
+                  <p className="text-muted-foreground mb-4">
+                    Completed 4 comprehensive tasks including data cleaning, Excel dashboard creation, and customer analysis. 
+                    Built interactive Power BI dashboards that improved data accessibility and decision-making processes.
                   </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Data Cleaning</Badge>
+                    <Badge variant="secondary">Power BI</Badge>
+                    <Badge variant="secondary">Customer Analysis</Badge>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -195,19 +322,50 @@ const Index = () => {
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle className="flex items-center gap-2">
-                        <Book className="h-5 w-5 text-primary" />
-                        Bachelor of Science in Statistics
+                        <Briefcase className="h-5 w-5 text-primary" />
+                        Freelance Data Analyst
                       </CardTitle>
-                      <CardDescription>University of California, Berkeley</CardDescription>
+                      <CardDescription>Fiverr/Upwork (Remote)</CardDescription>
                     </div>
-                    <Badge>2015-2019</Badge>
+                    <Badge>2025 - Present</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    Magna Cum Laude. Focus on applied statistics, probability theory, and statistical computing. 
-                    Minor in Computer Science.
+                  <p className="text-muted-foreground mb-4">
+                    Built custom dashboards for small businesses using Power BI, performed comprehensive data cleaning on 
+                    sales and customer datasets, and delivered actionable visual insights with KPIs, charts, and interactive filters.
                   </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Business Dashboards</Badge>
+                    <Badge variant="secondary">KPI Development</Badge>
+                    <Badge variant="secondary">Client Management</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="flex items-center gap-2">
+                        <Briefcase className="h-5 w-5 text-primary" />
+                        NOC Executive
+                      </CardTitle>
+                      <CardDescription>Reliance Jio (Bangalore)</CardDescription>
+                    </div>
+                    <Badge>2024 (6 months)</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Monitored network health and service operations, maintained detailed logs of system metrics, and efficiently 
+                    escalated technical faults. Developed strong analytical skills in real-time monitoring and problem resolution.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Network Monitoring</Badge>
+                    <Badge variant="secondary">System Metrics</Badge>
+                    <Badge variant="secondary">Technical Support</Badge>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -215,220 +373,217 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-16 bg-muted/30">
+      {/* Featured Projects */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold mb-12 text-center">Featured Projects</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Customer Churn Prediction",
-                  description: "ML model predicting customer churn with 94% accuracy using ensemble methods",
-                  tech: ["Python", "Scikit-learn", "Tableau"]
-                },
-                {
-                  title: "Sales Forecasting Dashboard",
-                  description: "Interactive dashboard for sales team with real-time forecasting capabilities",
-                  tech: ["Power BI", "SQL", "Azure"]
-                },
-                {
-                  title: "A/B Test Analysis Platform",
-                  description: "Statistical analysis framework for marketing campaign optimization",
-                  tech: ["R", "Shiny", "ggplot2"]
-                },
-                {
-                  title: "Supply Chain Optimization",
-                  description: "Data-driven approach reducing operational costs by 15%",
-                  tech: ["Python", "Pandas", "Plotly"]
-                },
-                {
-                  title: "Market Sentiment Analysis",
-                  description: "NLP-based sentiment analysis for cryptocurrency market trends",
-                  tech: ["Python", "NLTK", "TensorFlow"]
-                },
-                {
-                  title: "Healthcare Analytics",
-                  description: "Patient outcome prediction model for hospital resource planning",
-                  tech: ["R", "Caret", "Tableau"]
-                }
-              ].map((project, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{project.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-1">
-                      {project.tech.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">{tech}</Badge>
-                      ))}
-                    </div>
-                  </CardContent>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-600 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" 
+                    alt="Sales Performance Dashboard" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-lg mb-2">Sales Performance Dashboard</h4>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Interactive Power BI dashboard tracking monthly sales performance, revenue trends, and key performance 
+                    indicators with dynamic filtering capabilities.
+                  </p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    <Badge variant="outline" className="text-xs">Power BI</Badge>
+                    <Badge variant="outline" className="text-xs">KPI Tracking</Badge>
+                    <Badge variant="outline" className="text-xs">Sales Analytics</Badge>
+                  </div>
+                  <Button size="sm" className="w-full">Live Demo</Button>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="h-48 bg-gradient-to-br from-green-500 to-green-600 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" 
+                    alt="Customer Segmentation Analysis" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-lg mb-2">Customer Segmentation Analysis</h4>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Advanced Excel analysis identifying customer behavior patterns and segments, enabling targeted 
+                    marketing strategies and improved customer retention.
+                  </p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    <Badge variant="outline" className="text-xs">Excel Advanced</Badge>
+                    <Badge variant="outline" className="text-xs">Customer Analytics</Badge>
+                    <Badge variant="outline" className="text-xs">Segmentation</Badge>
+                  </div>
+                  <Button size="sm" className="w-full">Live Demo</Button>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-600 relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" 
+                    alt="Hospital Admission Insights" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h4 className="font-semibold text-lg mb-2">Hospital Admission Insights</h4>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Comprehensive visual reports analyzing hospital admission data patterns, patient demographics, 
+                    and operational efficiency metrics for healthcare management.
+                  </p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    <Badge variant="outline" className="text-xs">Healthcare Analytics</Badge>
+                    <Badge variant="outline" className="text-xs">Visual Reports</Badge>
+                    <Badge variant="outline" className="text-xs">Data Insights</Badge>
+                  </div>
+                  <Button size="sm" className="w-full">Live Demo</Button>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Business Impact */}
+            <div className="mt-16">
+              <h4 className="text-2xl font-bold mb-8 text-center">Business Impact Calculator</h4>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="text-center p-6">
+                  <div className="text-3xl font-bold text-primary mb-2">$12K+</div>
+                  <div className="font-semibold mb-1">Cost Savings Identified</div>
+                  <div className="text-sm text-muted-foreground">Through data optimization</div>
                 </Card>
-              ))}
+                <Card className="text-center p-6">
+                  <div className="text-3xl font-bold text-primary mb-2">30%</div>
+                  <div className="font-semibold mb-1">Efficiency Improvement</div>
+                  <div className="text-sm text-muted-foreground">Average across projects</div>
+                </Card>
+                <Card className="text-center p-6">
+                  <div className="text-3xl font-bold text-primary mb-2">40hrs</div>
+                  <div className="font-semibold mb-1">Weekly Time Saved</div>
+                  <div className="text-sm text-muted-foreground">Through automation</div>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section id="blog" className="py-16">
+      {/* Education & Certifications */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-3xl font-bold mb-12 text-center">Education & Certifications</h3>
+            
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Education */}
+              <div>
+                <h4 className="text-xl font-semibold mb-6">Education</h4>
+                <div className="space-y-6">
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <h5 className="font-semibold">Bachelor of Engineering</h5>
+                          <p className="text-muted-foreground">Computer Science & Engineering</p>
+                          <p className="text-sm text-muted-foreground">MVJ College Of Engineering, Karnataka</p>
+                        </div>
+                        <Badge>2023</Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-2">
+                        <div>
+                          <h5 className="font-semibold">Diploma</h5>
+                          <p className="text-muted-foreground">Computer Science</p>
+                          <p className="text-sm text-muted-foreground">Sandur Polytechnic, Karnataka</p>
+                        </div>
+                        <Badge>2019</Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Certifications */}
+              <div>
+                <h4 className="text-xl font-semibold mb-6">Professional Certifications</h4>
+                <div className="grid gap-4">
+                  {[
+                    { name: "Power BI for Beginners", issuer: "Simplilearn / Coursera" },
+                    { name: "Google Data Analytics Professional", issuer: "Google" },
+                    { name: "AWS Certified Data Analytics", issuer: "Amazon Web Services" },
+                    { name: "Tableau Desktop Specialist", issuer: "Tableau" },
+                    { name: "Microsoft Power BI Expert", issuer: "Microsoft" },
+                    { name: "Python for Data Science", issuer: "IBM" }
+                  ].map((cert, index) => (
+                    <Card key={index}>
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-3">
+                          <Award className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">{cert.name}</div>
+                            <div className="text-sm text-muted-foreground">{cert.issuer}</div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Posts */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold mb-12 text-center">Latest Blog Posts</h3>
-            <div className="space-y-6">
+            
+            <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  title: "The Future of Predictive Analytics in E-commerce",
-                  excerpt: "Exploring how machine learning is revolutionizing customer behavior prediction...",
-                  date: "March 15, 2024",
-                  readTime: "5 min read"
+                  title: "Creating Interactive Dashboards in Power BI",
+                  excerpt: "Learn how to build compelling and interactive dashboards in Power BI that drive business decisions...",
+                  date: "7/2/2025",
+                  readTime: "5 min read",
+                  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
                 },
                 {
-                  title: "Building Effective Data Visualization Dashboards",
-                  excerpt: "Best practices for creating dashboards that drive business decisions...",
-                  date: "March 8, 2024",
-                  readTime: "7 min read"
+                  title: "Advanced Excel Techniques for Data Analysts",
+                  excerpt: "Master advanced Excel functions, pivot tables, and data analysis techniques that every data analyst should know...",
+                  date: "7/2/2025", 
+                  readTime: "7 min read",
+                  image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
                 },
                 {
-                  title: "Statistical Significance vs Practical Significance",
-                  excerpt: "Understanding the difference and why both matter in data analysis...",
-                  date: "February 28, 2024",
-                  readTime: "6 min read"
+                  title: "Data Cleaning Best Practices and Common Pitfalls",
+                  excerpt: "Data cleaning is 80% of the work in data analysis. Learn the best practices and common mistakes to avoid...",
+                  date: "7/2/2025",
+                  readTime: "6 min read", 
+                  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
                 }
               ].map((post, index) => (
-                <Card key={index} className="hover:shadow-md transition-shadow cursor-pointer">
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="text-xl hover:text-primary transition-colors">{post.title}</CardTitle>
-                      <div className="text-sm text-muted-foreground text-right">
-                        <div>{post.date}</div>
-                        <div>{post.readTime}</div>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{post.excerpt}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Freelance Work Section */}
-      <section id="freelance" className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h3 className="text-3xl font-bold mb-12 text-center">Freelance Experience</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  company: "TechCorp Solutions",
-                  role: "Senior Data Analyst",
-                  duration: "6 months",
-                  description: "Led data transformation project resulting in 30% improvement in reporting efficiency"
-                },
-                {
-                  company: "RetailMax Inc.",
-                  role: "Business Intelligence Consultant",
-                  duration: "4 months", 
-                  description: "Developed customer segmentation model increasing targeted marketing ROI by 25%"
-                },
-                {
-                  company: "HealthTech Startup",
-                  role: "Data Science Advisor",
-                  duration: "8 months",
-                  description: "Built predictive models for patient risk assessment with regulatory compliance"
-                },
-                {
-                  company: "FinanceFlow Ltd.",
-                  role: "Analytics Specialist",
-                  duration: "3 months",
-                  description: "Created automated fraud detection system reducing false positives by 40%"
-                }
-              ].map((work, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <CardTitle className="flex items-center gap-2">
-                          <Briefcase className="h-5 w-5 text-primary" />
-                          {work.role}
-                        </CardTitle>
-                        <CardDescription>{work.company}</CardDescription>
-                      </div>
-                      <Badge variant="outline">{work.duration}</Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{work.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Certificates Section */}
-      <section id="certificates" className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h3 className="text-3xl font-bold mb-12 text-center">Certifications</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  name: "Google Data Analytics Professional",
-                  issuer: "Google",
-                  year: "2023"
-                },
-                {
-                  name: "AWS Certified Data Analytics",
-                  issuer: "Amazon Web Services",
-                  year: "2023"
-                },
-                {
-                  name: "Tableau Desktop Specialist",
-                  issuer: "Tableau",
-                  year: "2022"
-                },
-                {
-                  name: "Microsoft Power BI Expert",
-                  issuer: "Microsoft",
-                  year: "2022"
-                },
-                {
-                  name: "Python for Data Science",
-                  issuer: "IBM",
-                  year: "2021"
-                },
-                {
-                  name: "Machine Learning Engineer",
-                  issuer: "Coursera",
-                  year: "2021"
-                },
-                {
-                  name: "R Programming Specialist",
-                  issuer: "Johns Hopkins",
-                  year: "2020"
-                },
-                {
-                  name: "SQL Database Expert",
-                  issuer: "Oracle",
-                  year: "2020"
-                }
-              ].map((cert, index) => (
-                <Card key={index} className="text-center hover:shadow-md transition-shadow">
-                  <CardHeader>
-                    <Award className="h-8 w-8 text-primary mx-auto mb-2" />
-                    <CardTitle className="text-lg">{cert.name}</CardTitle>
-                    <CardDescription>{cert.issuer}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Badge>{cert.year}</Badge>
+                <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                  <div className="h-48">
+                    <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="text-xs text-muted-foreground mb-2">{post.date} • {post.readTime}</div>
+                    <h4 className="font-semibold mb-2 hover:text-primary transition-colors">{post.title}</h4>
+                    <p className="text-sm text-muted-foreground mb-4">{post.excerpt}</p>
+                    <Button size="sm" variant="outline">Read More</Button>
                   </CardContent>
                 </Card>
               ))}
@@ -438,35 +593,42 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-3xl font-bold mb-6">Let's Work Together</h3>
-            <p className="text-xl mb-8 opacity-90">
-              Ready to transform your data into actionable insights? Let's discuss your next project.
+      <section className="py-20 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-3xl font-bold mb-6">Get In Touch</h3>
+            <p className="text-xl mb-12 opacity-90">
+              Ready to transform your data into actionable insights? Let's discuss how I can help your business make data-driven decisions.
             </p>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center">
+                <div className="text-lg font-semibold mb-2">Location</div>
+                <div className="opacity-90">Bellary, Karnataka</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-semibold mb-2">Phone</div>
+                <div className="opacity-90">+91-8762218913</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-semibold mb-2">Email</div>
+                <div className="opacity-90">ahammedmoinnawaz@gmail.com</div>
+              </div>
+            </div>
+
             <div className="flex justify-center gap-4">
-              <Button variant="secondary" size="lg" className="gap-2">
+              <Button size="lg" variant="secondary" className="gap-2 bg-white text-blue-600 hover:bg-white/90">
                 <Mail className="h-4 w-4" />
-                alex@example.com
+                Send a Message
               </Button>
-              <Button variant="outline" size="lg" className="gap-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white/10">
                 <Linkedin className="h-4 w-4" />
-                LinkedIn
+                Connect on LinkedIn
               </Button>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-8 border-t">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
-            © 2024 Alex Thompson. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
