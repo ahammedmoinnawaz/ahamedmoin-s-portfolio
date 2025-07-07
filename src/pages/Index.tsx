@@ -519,30 +519,54 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Certifications */}
+              {/* Professional Certifications */}
               <div>
                 <h4 className="text-xl font-semibold mb-6">Professional Certifications</h4>
-                <div className="grid gap-4">
-                  {[
-                    { name: "Power BI for Beginners", issuer: "Simplilearn / Coursera" },
-                    { name: "Google Data Analytics Professional", issuer: "Google" },
-                    { name: "AWS Certified Data Analytics", issuer: "Amazon Web Services" },
-                    { name: "Tableau Desktop Specialist", issuer: "Tableau" },
-                    { name: "Microsoft Power BI Expert", issuer: "Microsoft" },
-                    { name: "Python for Data Science", issuer: "IBM" }
-                  ].map((cert, index) => (
-                    <Card key={index}>
-                      <CardContent className="p-4">
+                <div className="space-y-4">
+                  <Card>
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <Award className="h-5 w-5 text-primary" />
                           <div>
-                            <div className="font-medium">{cert.name}</div>
-                            <div className="text-sm text-muted-foreground">{cert.issuer}</div>
+                            <div className="font-medium">Power BI for Beginners</div>
+                            <div className="text-sm text-muted-foreground">Simplilearn / Coursera</div>
                           </div>
                         </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+                        <Button size="sm" variant="outline">Verify Certificate</Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <Award className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">Internship Certificate</div>
+                            <div className="text-sm text-muted-foreground">TechNest Intern</div>
+                          </div>
+                        </div>
+                        <Button size="sm" variant="outline">View Certificate</Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <Award className="h-5 w-5 text-primary" />
+                          <div>
+                            <div className="font-medium">Letter of Recommendation</div>
+                            <div className="text-sm text-muted-foreground">TechNest Intern</div>
+                          </div>
+                        </div>
+                        <Button size="sm" variant="outline">Read Recommendation</Button>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
               </div>
             </div>

@@ -39,7 +39,7 @@ const TopNavigation = () => {
                   key={item.id}
                   variant="ghost"
                   onClick={() => scrollToSection(item.id)}
-                  className="text-sm font-medium hover:text-primary transition-colors"
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors hover:bg-transparent"
                 >
                   {item.label}
                 </Button>

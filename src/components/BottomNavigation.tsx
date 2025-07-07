@@ -67,17 +67,18 @@ const BottomNavigation = () => {
           {/* Quick Links */}
           <div className="space-y-4">
             <h4 className="font-semibold">Quick Links</h4>
-            <div className="space-y-2">
+            <div className="space-y-1">
               {quickLinks.map((link) => (
-                <Button
-                  key={link.id}
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => scrollToSection(link.id)}
-                  className="h-auto p-0 text-sm text-muted-foreground hover:text-primary justify-start"
-                >
-                  {link.label}
-                </Button>
+                <div key={link.id}>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => scrollToSection(link.id)}
+                    className="h-auto p-1 text-sm text-muted-foreground hover:text-primary justify-start w-full text-left"
+                  >
+                    {link.label}
+                  </Button>
+                </div>
               ))}
             </div>
           </div>
