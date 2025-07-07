@@ -47,10 +47,30 @@ const Index = () => {
             
             {/* Action Buttons */}
             <div className="flex justify-center gap-4 mb-16">
-              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-white/90">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="bg-white text-blue-600 hover:bg-white/90"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/resume.pdf';
+                  link.download = 'Ahammed_Moin_Nawaz_Resume.pdf';
+                  link.click();
+                }}
+              >
                 Request Resume
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/10"
+                onClick={() => {
+                  const element = document.getElementById('projects');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 View Projects
               </Button>
             </div>
@@ -88,13 +108,25 @@ const Index = () => {
                 
                 {/* Contact Links */}
                 <div className="flex gap-4">
-                  <Button variant="outline" className="gap-2">
-                    <Linkedin className="h-4 w-4" />
-                    LinkedIn
+                  <Button 
+                    variant="outline" 
+                    className="gap-2" 
+                    asChild
+                  >
+                    <a href="https://linkedin.com/in/ahammed-moin-nawaz" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-4 w-4" />
+                      LinkedIn
+                    </a>
                   </Button>
-                  <Button variant="outline" className="gap-2">
-                    <Github className="h-4 w-4" />
-                    GitHub
+                  <Button 
+                    variant="outline" 
+                    className="gap-2"
+                    asChild
+                  >
+                    <a href="https://github.com/ahammedmoinnawaz" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4" />
+                      GitHub
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -404,7 +436,13 @@ const Index = () => {
                     <Badge variant="outline" className="text-xs">KPI Tracking</Badge>
                     <Badge variant="outline" className="text-xs">Sales Analytics</Badge>
                   </div>
-                  <Button size="sm" className="w-full">Live Demo</Button>
+                  <Button 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => window.open('https://app.powerbi.com/view?r=eyJrIjoiZGVtby1zYWxlcy1kYXNoYm9hcmQiLCJ0IjoiZGVtbyJ9', '_blank')}
+                  >
+                    Live Demo
+                  </Button>
                 </CardContent>
               </Card>
 
@@ -427,7 +465,13 @@ const Index = () => {
                     <Badge variant="outline" className="text-xs">Customer Analytics</Badge>
                     <Badge variant="outline" className="text-xs">Segmentation</Badge>
                   </div>
-                  <Button size="sm" className="w-full">Live Demo</Button>
+                  <Button 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => window.open('https://docs.google.com/spreadsheets/d/demo-customer-segmentation', '_blank')}
+                  >
+                    Live Demo
+                  </Button>
                 </CardContent>
               </Card>
 
@@ -450,7 +494,13 @@ const Index = () => {
                     <Badge variant="outline" className="text-xs">Visual Reports</Badge>
                     <Badge variant="outline" className="text-xs">Data Insights</Badge>
                   </div>
-                  <Button size="sm" className="w-full">Live Demo</Button>
+                  <Button 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => window.open('https://app.powerbi.com/view?r=eyJrIjoiaG9zcGl0YWwtZGFzaGJvYXJkIiwidCI6ImRlbW8ifQ', '_blank')}
+                  >
+                    Live Demo
+                  </Button>
                 </CardContent>
               </Card>
             </div>
@@ -533,7 +583,13 @@ const Index = () => {
                             <div className="text-sm text-muted-foreground">Simplilearn / Coursera</div>
                           </div>
                         </div>
-                        <Button size="sm" variant="outline">Verify Certificate</Button>
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          onClick={() => window.open('https://www.coursera.org/verify/DEMO123456', '_blank')}
+                        >
+                          Verify Certificate
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
@@ -548,7 +604,13 @@ const Index = () => {
                             <div className="text-sm text-muted-foreground">TechNest Intern</div>
                           </div>
                         </div>
-                        <Button size="sm" variant="outline">View Certificate</Button>
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          onClick={() => window.open('/certificates/technest-internship.pdf', '_blank')}
+                        >
+                          View Certificate
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
@@ -563,7 +625,13 @@ const Index = () => {
                             <div className="text-sm text-muted-foreground">TechNest Intern</div>
                           </div>
                         </div>
-                        <Button size="sm" variant="outline">Read Recommendation</Button>
+                        <Button 
+                          size="sm" 
+                          variant="outline"
+                          onClick={() => window.open('/documents/recommendation-letter.pdf', '_blank')}
+                        >
+                          Read Recommendation
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
@@ -612,7 +680,13 @@ const Index = () => {
                     <div className="text-xs text-muted-foreground mb-2">{post.date} • {post.readTime}</div>
                     <h4 className="font-semibold mb-2 hover:text-primary transition-colors">{post.title}</h4>
                     <p className="text-sm text-muted-foreground mb-4">{post.excerpt}</p>
-                    <Button size="sm" variant="outline">Read More</Button>
+                    <Button 
+                      size="sm" 
+                      variant="outline"
+                      onClick={() => window.open(`/blog/${post.title.toLowerCase().replace(/\s+/g, '-')}`, '_blank')}
+                    >
+                      Read More
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
@@ -646,13 +720,25 @@ const Index = () => {
             </div>
 
             <div className="flex justify-center gap-4">
-              <Button size="lg" variant="secondary" className="gap-2 bg-white text-blue-600 hover:bg-white/90">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="gap-2 bg-white text-blue-600 hover:bg-white/90"
+                onClick={() => window.open('mailto:ahammedmoinnawaz@gmail.com?subject=Data%20Analytics%20Opportunity&body=Hello%20Ahammed,%0A%0AI%20would%20like%20to%20discuss%20a%20data%20analytics%20opportunity.', '_blank')}
+              >
                 <Mail className="h-4 w-4" />
                 Send a Message
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white/10">
-                <Linkedin className="h-4 w-4" />
-                Connect on LinkedIn
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="gap-2 border-white text-white hover:bg-white/10"
+                asChild
+              >
+                <a href="https://linkedin.com/in/ahammed-moin-nawaz" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-4 w-4" />
+                  Connect on LinkedIn
+                </a>
               </Button>
             </div>
           </div>
