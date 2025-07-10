@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Linkedin, Github, Mail, Phone, MapPin, FileText } from "lucide-react";
 
@@ -116,7 +117,18 @@ const BottomNavigation = () => {
                 );
               })}
             </div>
-            <Button className="w-full gap-2" size="sm">
+            <Button 
+              className="w-full gap-2" 
+              size="sm"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume.pdf';
+                link.download = 'Ahammed_Moin_Nawaz_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
               <FileText className="h-4 w-4" />
               Download Resume
             </Button>

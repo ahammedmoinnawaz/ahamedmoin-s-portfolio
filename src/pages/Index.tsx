@@ -1,3 +1,4 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,7 +29,7 @@ const Index = () => {
             {/* Profile Image */}
             <div className="mb-8">
               <Avatar className="w-48 h-48 mx-auto border-4 border-white/30">
-                <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Data Analyst" />
+                <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Ahammed Moin Nawaz" />
                 <AvatarFallback className="text-6xl bg-white/20">AN</AvatarFallback>
               </Avatar>
             </div>
@@ -55,10 +56,12 @@ const Index = () => {
                   const link = document.createElement('a');
                   link.href = '/resume.pdf';
                   link.download = 'Ahammed_Moin_Nawaz_Resume.pdf';
+                  document.body.appendChild(link);
                   link.click();
+                  document.body.removeChild(link);
                 }}
               >
-                Request Resume
+                Download Resume
               </Button>
               <Button 
                 size="lg" 
@@ -607,9 +610,16 @@ const Index = () => {
                         <Button 
                           size="sm" 
                           variant="outline"
-                          onClick={() => window.open('/certificates/technest-internship.pdf', '_blank')}
+                          onClick={() => {
+                            const link = document.createElement('a');
+                            link.href = '/certificates/technest-internship.pdf';
+                            link.download = 'TechNest_Internship_Certificate.pdf';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                          }}
                         >
-                          View Certificate
+                          Download Certificate
                         </Button>
                       </div>
                     </CardContent>
@@ -628,9 +638,16 @@ const Index = () => {
                         <Button 
                           size="sm" 
                           variant="outline"
-                          onClick={() => window.open('/documents/recommendation-letter.pdf', '_blank')}
+                          onClick={() => {
+                            const link = document.createElement('a');
+                            link.href = '/documents/recommendation-letter.pdf';
+                            link.download = 'TechNest_Recommendation_Letter.pdf';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                          }}
                         >
-                          Read Recommendation
+                          Download Letter
                         </Button>
                       </div>
                     </CardContent>
